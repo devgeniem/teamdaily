@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import FirebaseAuth from 'react-firebaseui/dist/FirebaseAuth';
+import FirebaseAuth from 'react-firebaseui';
 import auth from 'services/auth';
 
 const uiConfig = {
