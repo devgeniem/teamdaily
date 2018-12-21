@@ -1,9 +1,7 @@
 # TeamDaily
 
-By popular request, here's the open sourced version of our internal "TeamDaily" tool which we at Fraktio use
-to measure our people's business and happiness and such.
-
-Jaani talks about this software in [his mighty blog post](https://fraktio.fi/blogi/sisainen-kehitys-case-teamdaily/).
+Forked from https://github.com/fraktio/teamdaily.
+Docs not updated.
 
 ## Installation
 
