@@ -126,7 +126,64 @@ class StatusForm extends Component {
         </div>
         <div className={styles.control}>
           <div className={styles.label}>
-            <FormattedMessage id="statusForm_doing" defaultMessage="What are you working on?" />
+            <FormattedMessage id="statusForm_feeling" defaultMessage="How are you?" />
+          </div>
+          <div className={styles.buttonGroup}>
+            <Button
+              type="button"
+              disabled={!this.props.enabled}
+              onClick={() => this.changeColor(colors.COLOR_DARK_GREEN)}
+              active={fields.color === colors.COLOR_DARK_GREEN}
+              className="darkgreen"
+              title={intl.messages.statusForm_darkGreen}
+            >
+              <FormattedMessage id="statusForm_darkGreen" defaultMessage="Doing good" /> 😁
+            </Button>
+            <Button
+              type="button"
+              disabled={!this.props.enabled}
+              onClick={() => this.changeColor(colors.COLOR_GREEN)}
+              active={fields.color === colors.COLOR_GREEN}
+              className="green"
+              title={intl.messages.statusForm_green}
+            >
+              <FormattedMessage id="statusForm_green" defaultMessage="Okay" /> 😎
+            </Button>
+            <Button
+              type="button"
+              disabled={!this.props.enabled}
+              onClick={() => this.changeColor(colors.COLOR_YELLOW)}
+              active={fields.color === colors.COLOR_YELLOW}
+              className="yellow"
+              title={intl.messages.statusForm_yellow}
+            >
+              <FormattedMessage id="statusForm_yellow" defaultMessage="So so" /> 🤔
+            </Button>
+            <Button
+              type="button"
+              disabled={!this.props.enabled}
+              onClick={() => this.changeColor(colors.COLOR_ORANGE)}
+              active={fields.color === colors.COLOR_ORANGE}
+              className="orange"
+              title={intl.messages.statusForm_orange}
+            >
+              <FormattedMessage id="statusForm_orange" defaultMessage="Pretty hard" /> 😪
+            </Button>
+            <Button
+              type="button"
+              disabled={!this.props.enabled}
+              onClick={() => this.changeColor(colors.COLOR_RED)}
+              active={fields.color === colors.COLOR_RED}
+              className="red"
+              title={intl.messages.statusForm_red}
+            >
+              <FormattedMessage id="statusForm_red" defaultMessage="Not good" /> 😵
+            </Button>
+          </div>
+        </div>
+        <div className={styles.control}>
+          <div className={styles.label}>
+            <FormattedMessage id="statusForm_doing" defaultMessage="Elaborate, please" />
           </div>
           <input
             disabled={!this.props.enabled}
@@ -137,63 +194,6 @@ class StatusForm extends Component {
             onChange={this.changeDescription}
             placeholder={intl.messages.statusForm_whatAreYouDoingPlaceholder}
           />
-        </div>
-        <div className={styles.control}>
-          <div className={styles.label}>
-            <FormattedMessage id="statusForm_feeling" defaultMessage="How are you?" />
-          </div>
-          <div className={styles.buttonGroup}>
-            <Button
-              type="button"
-              disabled={!this.props.enabled}
-              onClick={() => this.changeColor(colors.COLOR_GREEN)}
-              active={fields.color === colors.COLOR_GREEN}
-              className="green"
-              title={intl.messages.statusForm_ok}
-            >
-              <FormattedMessage id="statusForm_ok" defaultMessage="Doing good" />
-            </Button>
-            <Button
-              type="button"
-              disabled={!this.props.enabled}
-              onClick={() => this.changeColor(colors.COLOR_YELLOW)}
-              active={fields.color === colors.COLOR_YELLOW}
-              className="yellow"
-              title={intl.messages.statusForm_busy}
-            >
-              <FormattedMessage id="statusForm_busy" defaultMessage="Pretty busy" />
-            </Button>
-            <Button
-              type="button"
-              disabled={!this.props.enabled}
-              onClick={() => this.changeColor(colors.COLOR_RED)}
-              active={fields.color === colors.COLOR_RED}
-              className="red"
-              title={intl.messages.statusForm_tooMuch}
-            >
-              <FormattedMessage id="statusForm_tooMuch" defaultMessage="Too much to do" />
-            </Button>
-            <Button
-              type="button"
-              disabled={!this.props.enabled}
-              onClick={() => this.changeColor(colors.COLOR_BLUE)}
-              active={fields.color === colors.COLOR_BLUE}
-              className="blue"
-              title={intl.messages.statusForm_notEnough}
-            >
-              <FormattedMessage id="statusForm_notEnough" defaultMessage="Not enough to do" />
-            </Button>
-            <Button
-              type="button"
-              disabled={!this.props.enabled}
-              onClick={() => this.changeColor(colors.COLOR_PINK)}
-              active={fields.color === colors.COLOR_PINK}
-              className="pink"
-              title={intl.messages.statusForm_onVacation}
-            >
-              <FormattedMessage id="statusForm_onVacation" defaultMessage="On vacation" />
-            </Button>
-          </div>
         </div>
         <div>
           <label>

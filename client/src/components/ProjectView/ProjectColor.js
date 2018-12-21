@@ -25,7 +25,7 @@ const ProjectColor = props => {
 
   const options = [
     {
-      value: colors.COLOR_BLUE,
+      value: "blue",
       label: intl.formatMessage({ id: 'project_passive', defaultMessage: 'Passive' }),
     },
     {

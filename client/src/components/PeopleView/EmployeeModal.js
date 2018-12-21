@@ -188,28 +188,28 @@ export default injectIntl(EmployeeModal);
 
 const MoodsList = [
   {
-    color: colors.COLOR_PINK,
-    message: 'statusForm_onVacation',
-    icon: '🌴',
-  },
-  {
-    color: colors.COLOR_BLUE,
-    message: 'statusForm_notEnough',
-    icon: '😪',
-  },
-  {
-    color: colors.COLOR_GREEN,
-    message: 'statusForm_ok',
+    color: colors.COLOR_DARK_GREEN,
+    message: 'statusForm_darkGreen',
     icon: '😁',
   },
   {
+    color: colors.COLOR_GREEN,
+    message: 'statusForm_green',
+    icon: '😎',
+  },
+  {
     color: colors.COLOR_YELLOW,
-    message: 'statusForm_busy',
-    icon: '😕',
+    message: 'statusForm_yellow',
+    icon: '🤔',
+  },
+  {
+    color: colors.COLOR_ORANGE,
+    message: 'statusForm_orange',
+    icon: '😪',
   },
   {
     color: colors.COLOR_RED,
-    message: 'statusForm_tooMuch',
+    message: 'statusForm_red',
     icon: '😵',
   },
 ];

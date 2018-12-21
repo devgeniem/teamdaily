@@ -95,10 +95,10 @@ export default React.createClass({
     const googleArrayFormat = map(dailySpread, (statuses, key) => {
       return [
         translations[key],
-        counts(colors.COLOR_P, statuses),
-        counts(colors.COLOR_BLUE, statuses),
+        counts(colors.COLOR_DARK_GREEN, statuses),
         counts(colors.COLOR_GREEN, statuses),
         counts(colors.COLOR_YELLOW, statuses),
+        counts(colors.COLOR_ORANGE, statuses),
         counts(colors.COLOR_RED, statuses),
       ];
     });
@@ -112,17 +112,17 @@ export default React.createClass({
     const data = google.visualization.arrayToDataTable([
       [
         'Day',
-        'Lomalla',
-        'Liian vähän töitä',
-        'Sopivasti töitä',
-        'Hieman liikaa töitä',
-        'Liian paljon töitä',
+        '5',
+        '4',
+        '3',
+        '2',
+        '1',
       ],
       ...googleArrayFormat,
     ]);
 
     const options = {
-      title: 'Työtaakka - viikko ' + week,
+      title: 'Fiilis - viikko ' + week,
       hAxis: {
         title: 'Viikonpäivä',
         titleTextStyle: { color: 'white' },
@@ -149,10 +149,10 @@ export default React.createClass({
       titleTextStyle: { color: 'white' },
       isStacked: 'true',
       colors: [
-        colors.COLOR_PINK,
-        colors.COLOR_BLUE,
+        colors.COLOR_DARK_GREEN,
         colors.COLOR_GREEN,
         colors.COLOR_YELLOW,
+        colors.COLOR_ORANGE,
         colors.COLOR_RED,
       ],
       backgroundColor: '#2B2B2B',

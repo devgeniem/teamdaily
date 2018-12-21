@@ -15,7 +15,7 @@ const messages = {
   fi: require('./translations/fi.json'),
 };
 
-const DEFAULT_LOCALE = 'en'; //TODO:  Get from somewhere eles
+const DEFAULT_LOCALE = 'fi'; //TODO:  Get from somewhere eles
 
 const Root = ({ store }) => {
   return (
