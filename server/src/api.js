@@ -1,11 +1,9 @@
-import path from 'path';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import moment from 'moment';
 import morgan from 'morgan';
 import express from 'express';
 import dotenv from 'dotenv';
-import firebaseAdmin from 'firebase-admin';
 
 import connectDatabase from './services/database';
 import authMiddleware from './authMiddleware';
@@ -18,8 +16,6 @@ function getNumberOfWeeksForYear(year) {
   return moment(year, 'YYYY').weeksInYear();
 }
 
-const now = moment();
-const currentWeek = now.format('WW');
 const weekAmount = 25;
 
 const app = express();
@@ -47,6 +43,8 @@ function asyncWrap(fn) {
 app.get(
   '/api/message/latest',
   asyncWrap(async (req, res) => {
+    const now = moment();
+    const currentWeek = now.format('WW');
     const year = parseInt(now.format('YYYY'));
     const startingFromWeek = currentWeek - weekAmount;
 
