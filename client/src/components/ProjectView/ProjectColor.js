@@ -11,7 +11,7 @@ const ProjectColorOption = props => {
   const { value, label } = props;
 
   return (
-    <div className={styles.projectColorOption}>
+    <div className={styles.projectColorOption} onClick={e => e.stopPropagation()}>
       <span className={classnames(styles.projectColorOptionBall, value)} />
       <span>
         {label}

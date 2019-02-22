@@ -37,6 +37,7 @@ export default class ProjectMessage extends Component {
   };
 
   onBlur = event => {
+    event.stopPropagation();
     this.setState(
       {
         message: event.target.value,
@@ -48,7 +49,8 @@ export default class ProjectMessage extends Component {
     );
   };
 
-  focus = () => {
+  focus = (e) => {
+    e.stopPropagation();
     this.setState(
       {
         focused: true,
@@ -81,6 +83,7 @@ export default class ProjectMessage extends Component {
             onChange={this.onChange}
             onBlur={this.onBlur}
             value={this.state.message}
+            onClick={e => e.stopPropagation()}
           />}
 
         {!this.state.focused &&

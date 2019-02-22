@@ -8,14 +8,21 @@ import ProjectMessage from './ProjectMessage';
 
 export default class ProjectBox extends Component {
   render() {
-    const { project, entries, saveProjectColor, saveProjectMessage } = this.props;
+    const { project, entries, saveProjectColor, saveProjectMessage, handleClick } = this.props;
+
+    const doClick = (e) => {
+      if (e.target.className.indexOf("target") < 0) {
+        return;
+      }
+      handleClick && handleClick(project);
+    }
 
     return (
-      <div className={classnames([peopleStyles.masonryCard])}>
-        <div className={classnames(styles.cardHeader, project.color)} />
+      <div className={classnames([peopleStyles.masonryCard, 'target'])} onClick={doClick}>
+        <div className={classnames(styles.cardHeader, project.color, 'target')}  />
 
-        <div className={classnames(styles.card)}>
-          <h4 className={styles.projectTitle}>
+        <div className={classnames(styles.card, 'target')}>
+          <h4 className={classnames(styles.projectTitle, 'target')}>
             {project.name}
           </h4>
           <ProjectColor color={project.color} saveProjectColor={saveProjectColor} />
@@ -29,7 +36,7 @@ export default class ProjectBox extends Component {
             const color = latestEntry ? latestEntry.color : 'empty';
 
             return (
-              <span key={`${project.id}-${e.name}`} className={`${styles.employee} ${color}`}>
+              <span key={`${project.id}-${e.name}`} className={`${styles.employee} ${color} target`}>
                 {e.name}
               </span>
             );
